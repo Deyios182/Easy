@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyPatagonia.VisionAppPage"
+             BackgroundColor="#F9F9F9"
+             Title="Visión de la App">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="15">
+            <!-- Imagen de encabezado -->
+            <Image Source="vision_banner.jpg" 
+                   Aspect="AspectFill" 
+                   HeightRequest="30"
+                   HorizontalOptions="FillAndExpand" />
+
+            <!-- Título -->
+            <Label Text="EasyPatagonia - Descubre la Patagonia"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#4f6d7a"
+                   HorizontalOptions="Center" />
+
+            <!-- Texto de visión -->
+            <ScrollView>
+                <Label Text="En Easy Patagonia, nuestra visión es ser la plataforma líder en turismo responsable que conecta a los viajeros con experiencias auténticas y memorables en la región austral de Chile. Aspiramos a transformar cada viaje en la Patagonia en una aventura inolvidable, facilitando la exploración de esta tierra indómita con comodidad, autenticidad y conexión con la naturaleza.\n\nNos enfocamos en crear soluciones innovadoras que simplifiquen la planificación de los viajes, a través de nuestra próxima aplicación móvil. Con ella, los usuarios podrán acceder fácilmente a las mejores opciones de hospedaje, gastronomía y tours personalizados, optimizando cada detalle para que solo se preocupen por disfrutar.\n\nAdemás, como parte de nuestra misión, promovemos un turismo sostenible que respeta y celebra la riqueza cultural y natural de la región, apoyando a las comunidades locales y fomentando la preservación de su entorno único.Nuestro lema lo resume todo: 'Tú disfruta, nosotros resolvemos'. Con Easy Patagonia, la aventura comienza aquí."
+                       FontSize="16"
+                       TextColor="#4f6d7a"
+                       LineHeight="1.5" />
+            </ScrollView>
+
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

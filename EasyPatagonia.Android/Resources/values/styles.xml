@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="MainTheme" parent="MainTheme.Base">
+		<!-- Personaliza los colores del tema -->
+
+		<!-- colorPrimary es el color principal de la aplicación (Naranja) -->
+		<item name="colorPrimary">#4f6d7a</item>
+		<!-- Naranja -->
+
+		<!-- colorPrimaryDark es el color de la barra de estado (Beige claro) -->
+		<item name="colorPrimaryDark">#dd6e42</item>
+		<!-- Beige claro -->
+
+		<!-- colorAccent es el color para los controles y acentos (Azul grisáceo) -->
+		<item name="colorAccent">#4f6d7a</item>
+		<!-- Azul grisáceo -->
+
+	</style>
+
+</resources>

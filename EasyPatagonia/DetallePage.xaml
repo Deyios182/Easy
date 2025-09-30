@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyPatagonia.DetallePage"
+             Title="Detalles"
+             BackgroundColor="{StaticResource SecondaryDark}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15" Spacing="20">
+                <Image x:Name="logoImage"
+                       HeightRequest="100"
+                       WidthRequest="100"
+                       HorizontalOptions="Center"
+                       Aspect="AspectFit"
+                       BackgroundColor="Transparent"/>
+                <!-- Título -->
+                <Label x:Name="tituloLabel"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource TextLight}"
+                       HorizontalOptions="Center" />
+
+                <!-- Descripción -->
+                <Label x:Name="descripcionLabel"
+                       FontSize="16"
+                       TextColor="{StaticResource TextLight}"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="Start" />
+
+                <!-- Galería -->
+                <StackLayout>
+                    <Label Text="Galería"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource TextLight}" />
+                    <CollectionView x:Name="galleryCollectionView"
+                                    ItemsSource="{Binding Imagenes}"
+                                    SelectionMode="None"
+                                    HeightRequest="150">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="0" HasShadow="False" CornerRadius="10" BackgroundColor="Transparent">
+                                    <Image Source="{Binding .}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="140"
+                                           WidthRequest="140">
+                                        <Image.GestureRecognizers>
+                                            <PinchGestureRecognizer PinchUpdated="OnPinchUpdated" />
+                                            <TapGestureRecognizer Tapped="OnImageTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+
+                <!-- Dirección -->
+                <Label x:Name="direccionLabel"
+                       FontSize="14"
+                       TextColor="{StaticResource TextLight}"
+                       HorizontalOptions="Center" />
+
+                <!-- Servicios -->
+                <Label x:Name="servicioLabel"
+                       FontSize="16"
+                       FontAttributes="Italic"
+                       TextColor="{StaticResource AccentLight}"
+                       HorizontalOptions="Center" />
+
+                <!-- Botones -->
+                <Button Text="Ver en el mapa"
+                        BackgroundColor="{StaticResource AccentLight}"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="OnVerEnMapaClicked" />
+                <Button Text="Contactar por WhatsApp"
+                        BackgroundColor="#25D366"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Clicked="OnContactarWhatsAppClicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

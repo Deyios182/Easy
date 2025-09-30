@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyPatagonia.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Nueva paleta de colores -->
+            <Color x:Key="Primary">#dd6e42</Color>
+            <Color x:Key="SecondaryDark">#4f6d7a</Color>
+            <Color x:Key="AccentLight">#c0d6df</Color>
+            <Color x:Key="Background">#e8dab2</Color>
+            <Color x:Key="TextLight">#eaeaea</Color>
+
+            <!-- Estilo global para botones -->
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource TextLight}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#33dd6e42" />
+                                    <Setter Property="TextColor" Value="#80FFFFFF" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!-- Estilo global para etiquetas -->
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource SecondaryDark}" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+
+            <!-- Estilo global para entradas -->
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BackgroundColor" Value="{StaticResource AccentLight}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource Primary}" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

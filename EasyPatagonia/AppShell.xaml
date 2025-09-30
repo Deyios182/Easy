@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:EasyPatagonia"
+       Title="EasyPatagonia"
+       x:Class="EasyPatagonia.AppShell">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <!-- Base Style for Shell -->
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource SecondaryDark}" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource TextLight}" />
+                <Setter Property="Shell.TitleColor" Value="{StaticResource TextLight}" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="{StaticResource AccentLight}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource TextLight}" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource AccentLight}" />
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource TextLight}" />
+            </Style>
+
+            <!-- Specific Styles -->
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <!-- Navegación -->
+    <TabBar>
+        <Tab Title="Mapa" Icon="map.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MapPage}" />
+        </Tab>
+        <Tab Title="Hospedaje" Icon="bed.png">
+            <ShellContent ContentTemplate="{DataTemplate local:HospedajePage}" />
+        </Tab>
+        <Tab Title="Restaurantes" Icon="restaurant.png">
+            <ShellContent ContentTemplate="{DataTemplate local:RestaurantesPage}" />
+        </Tab>
+        <Tab Title="Actividades" Icon="activity.png">
+            <ShellContent ContentTemplate="{DataTemplate local:ActividadesPage}" />
+        </Tab>
+        <Tab Title="Visión" Icon="vision.png">
+            <ShellContent ContentTemplate="{DataTemplate local:VisionAppPage}" />
+        </Tab>
+        <Tab Title="Social" Icon="contact.png">
+            <ShellContent ContentTemplate="{DataTemplate local:SocialPage}" />
+        </Tab>
+    </TabBar>
+</Shell>

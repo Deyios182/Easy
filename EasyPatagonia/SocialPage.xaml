@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyPatagonia.SocialPage"
+             Title="Contacto y Redes Sociales">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Síguenos en nuestras Redes Sociales" 
+                   FontSize="Large" 
+                   HorizontalOptions="Center"
+                   Margin="0,10" />
+            <!--<Button Text="Facebook" 
+                    BackgroundColor="#3b5998" 
+                    TextColor="White" 
+                    CornerRadius="10"
+                    Clicked="OnFacebookClicked" />-->
+            <Button Text="Instagram" 
+                    BackgroundColor="#E1306C" 
+                    TextColor="White" 
+                    CornerRadius="10"
+                    Margin="0,10"
+                    Clicked="OnInstagramClicked" />
+            <Button Text="TikTok" 
+                    BackgroundColor="#000000" 
+                    TextColor="White" 
+                    CornerRadius="10"
+                    Margin="0,10"
+                    Clicked="OnTikTokClicked" />
+            <Button Text="WhatsApp" 
+                    BackgroundColor="#25D366" 
+                    TextColor="White" 
+                    CornerRadius="10"
+                    Clicked="OnWhatsAppClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

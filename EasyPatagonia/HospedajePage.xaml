@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyPatagonia.HospedajePage"
+             Title="Hospedajes"
+             BackgroundColor="#F9F9F9">
+    <ContentPage.Content>
+        <StackLayout Padding="10" Spacing="10">
+            <!-- Encabezado -->
+            <Label Text="Explora los mejores hospedajes en Patagonia"
+                   FontSize="18"
+                   TextColor="#333"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold" />
+
+            <!-- Lista de hospedajes -->
+            <ListView x:Name="hospedajeListView" 
+                      HasUnevenRows="True"
+                      ItemSelected="OnItemSelected"
+                      SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="10"
+                                   Margin="5"
+                                   CornerRadius="10"
+                                   BackgroundColor="White"
+                                   BorderColor="#E0E0E0">
+                                <StackLayout>
+                                    <Label Text="{Binding Nombre}" 
+                                           FontSize="16" 
+                                           FontAttributes="Bold"
+                                           TextColor="#2C3E50" />
+                                    <Label Text="{Binding Direccion}" 
+                                           FontSize="14" 
+                                           TextColor="#7F8C8D" />
+                                    <Label Text="{Binding Descripcion}" 
+                                           FontSize="12" 
+                                           TextColor="#95A5A6" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

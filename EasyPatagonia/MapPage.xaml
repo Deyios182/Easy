@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="EasyPatagonia.MapPage"
+             Title="Mapa">
+    <ContentPage.Content>
+        <!-- Usamos AbsoluteLayout para colocar los elementos -->
+        <AbsoluteLayout>
+            <!-- Mapa en el fondo ocupando todo el espacio disponible -->
+            <maps:Map
+                x:Name="map"
+                MapType="Street"
+                IsShowingUser="True"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1" />
+
+            <!-- Botón más abajo y centrado -->
+            <Button Text="Cómo llegar"
+                    BackgroundColor="#E74C3C"
+                    TextColor="White"
+                    CornerRadius="25"
+                    FontAttributes="Bold"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    Clicked="OnComoLlegarClicked"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="0.5, 0.95" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
+

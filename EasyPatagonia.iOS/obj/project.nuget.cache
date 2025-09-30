@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Rly6A/ohtp8nDjnKazKm15PhaGEDZAgT6CrODa3Ytdluao7c+LOXNJ+MYDqIPow4dpjGV9dZFriEfGW+BAu/2Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Deyios\\source\\repos\\EasyPatagonia\\EasyPatagonia.iOS\\EasyPatagonia.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Deyios\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Deyios\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.6\\xamarin.communitytoolkit.2.0.6.nupkg.sha512",
+    "C:\\Users\\Deyios\\.nuget\\packages\\xamarin.essentials\\1.8.1\\xamarin.essentials.1.8.1.nupkg.sha512",
+    "C:\\Users\\Deyios\\.nuget\\packages\\xamarin.forms\\5.0.0.2662\\xamarin.forms.5.0.0.2662.nupkg.sha512",
+    "C:\\Users\\Deyios\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2662\\xamarin.forms.maps.5.0.0.2662.nupkg.sha512",
+    "C:\\Users\\Deyios\\.nuget\\packages\\xamarinvideoplayer\\1.0.2\\xamarinvideoplayer.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
