@@ -2,47 +2,48 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EasyPatagonia.HospedajePage"
-             Title="Hospedajes"
-             BackgroundColor="#F9F9F9">
-    <ContentPage.Content>
-        <StackLayout Padding="10" Spacing="10">
-            <!-- Encabezado -->
-            <Label Text="Explora los mejores hospedajes en Patagonia"
-                   FontSize="18"
-                   TextColor="#333"
-                   HorizontalOptions="Center"
-                   FontAttributes="Bold" />
+             Title="Hospedaje"
+             BackgroundColor="#F5F5F5">
 
-            <!-- Lista de hospedajes -->
-            <ListView x:Name="hospedajeListView" 
-                      HasUnevenRows="True"
-                      ItemSelected="OnItemSelected"
-                      SeparatorVisibility="Default">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Frame Padding="10"
-                                   Margin="5"
-                                   CornerRadius="10"
-                                   BackgroundColor="White"
-                                   BorderColor="#E0E0E0">
-                                <StackLayout>
-                                    <Label Text="{Binding Nombre}" 
-                                           FontSize="16" 
-                                           FontAttributes="Bold"
-                                           TextColor="#2C3E50" />
-                                    <Label Text="{Binding Direccion}" 
-                                           FontSize="14" 
-                                           TextColor="#7F8C8D" />
-                                    <Label Text="{Binding Descripcion}" 
-                                           FontSize="12" 
-                                           TextColor="#95A5A6" />
+    <StackLayout Padding="10" Spacing="10">
+        <Label Text="Descansa en la Patagonia"
+               FontSize="20" FontAttributes="Bold" TextColor="#333" HorizontalOptions="Center" Margin="0,10,0,5"/>
+
+        <ListView x:Name="hospedajeListView"
+                  HasUnevenRows="True"
+                  ItemSelected="OnItemSelected"
+                  SeparatorVisibility="None"
+                  BackgroundColor="Transparent">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="10" Margin="0,5" CornerRadius="10" BackgroundColor="White" HasShadow="True">
+                            <StackLayout Orientation="Horizontal" Spacing="15">
+
+                                <!-- LOGO REDONDO -->
+                                <Image Source="{Binding Logo}" 
+                                       Aspect="AspectFit" 
+                                       WidthRequest="70" 
+                                       HeightRequest="70" 
+                                       HorizontalOptions="Start" 
+                                       VerticalOptions="Center"/>
+
+                                <!-- TEXTOS -->
+                                <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding Nombre}" FontSize="16" FontAttributes="Bold" TextColor="#333"/>
+                                    <Label Text="{Binding Direccion}" FontSize="12" TextColor="#777"/>
+                                    <Label Text="Ver habitaciones..." FontSize="12" TextColor="#E74C3C" FontAttributes="Italic"/>
                                 </StackLayout>
-                            </Frame>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+
+                                <!-- FLECHA -->
+                                <Label Text="›" FontSize="30" TextColor="#CCC" VerticalOptions="Center" HorizontalOptions="End"/>
+
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

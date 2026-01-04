@@ -4,11 +4,15 @@
        xmlns:local="clr-namespace:EasyPatagonia"
        Title="EasyPatagonia"
        x:Class="EasyPatagonia.AppShell">
+
     <Shell.Resources>
         <ResourceDictionary>
-            <!-- Base Style for Shell -->
+            <Color x:Key="AccentLight">#BBBBBB</Color>
+            <Color x:Key="Primary">#E74C3C</Color>
+            <Color x:Key="TextLight">White</Color>
+
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource SecondaryDark}" />
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="Shell.ForegroundColor" Value="{StaticResource TextLight}" />
                 <Setter Property="Shell.TitleColor" Value="{StaticResource TextLight}" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
@@ -19,30 +23,29 @@
                 <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource TextLight}" />
             </Style>
 
-            <!-- Specific Styles -->
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
     </Shell.Resources>
 
-    <!-- Navegación -->
+    <!-- IMPORTANTE: Agregué Route="..." a cada Tab -->
     <TabBar>
-        <Tab Title="Mapa" Icon="map.png">
+        <Tab Title="Mapa" Icon="map.png" Route="Mapa">
             <ShellContent ContentTemplate="{DataTemplate local:MapPage}" />
         </Tab>
-        <Tab Title="Hospedaje" Icon="bed.png">
+        <Tab Title="Hospedaje" Icon="bed.png" Route="Hospedaje">
             <ShellContent ContentTemplate="{DataTemplate local:HospedajePage}" />
         </Tab>
-        <Tab Title="Restaurantes" Icon="restaurant.png">
+        <Tab Title="Restaurantes" Icon="restaurant.png" Route="Restaurantes">
             <ShellContent ContentTemplate="{DataTemplate local:RestaurantesPage}" />
         </Tab>
-        <Tab Title="Actividades" Icon="activity.png">
+        <Tab Title="Actividades" Icon="activity.png" Route="Actividades">
             <ShellContent ContentTemplate="{DataTemplate local:ActividadesPage}" />
         </Tab>
-        <Tab Title="Visión" Icon="vision.png">
+        <Tab Title="Visión" Icon="vision.png" Route="Vision">
             <ShellContent ContentTemplate="{DataTemplate local:VisionAppPage}" />
         </Tab>
-        <Tab Title="Social" Icon="contact.png">
+        <Tab Title="Social" Icon="contact.png" Route="Social">
             <ShellContent ContentTemplate="{DataTemplate local:SocialPage}" />
         </Tab>
     </TabBar>

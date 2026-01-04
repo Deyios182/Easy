@@ -2,35 +2,173 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EasyPatagonia.SocialPage"
-             Title="Contacto y Redes Sociales">
+             Title="Contacto y Redes Sociales"
+             BackgroundColor="#F5F5F5">
+
     <ContentPage.Content>
-        <StackLayout Padding="10">
-            <Label Text="Síguenos en nuestras Redes Sociales" 
-                   FontSize="Large" 
+        <StackLayout Padding="20" Spacing="25" VerticalOptions="CenterAndExpand">
+
+            <Label Text="¡Únete a la Aventura EasyPatagonia!"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="#E74C3C" 
                    HorizontalOptions="Center"
-                   Margin="0,10" />
-            <!--<Button Text="Facebook" 
-                    BackgroundColor="#3b5998" 
-                    TextColor="White" 
-                    CornerRadius="10"
-                    Clicked="OnFacebookClicked" />-->
-            <Button Text="Instagram" 
-                    BackgroundColor="#E1306C" 
-                    TextColor="White" 
-                    CornerRadius="10"
-                    Margin="0,10"
-                    Clicked="OnInstagramClicked" />
-            <Button Text="TikTok" 
-                    BackgroundColor="#000000" 
-                    TextColor="White" 
-                    CornerRadius="10"
-                    Margin="0,10"
-                    Clicked="OnTikTokClicked" />
-            <Button Text="WhatsApp" 
-                    BackgroundColor="#25D366" 
-                    TextColor="White" 
-                    CornerRadius="10"
-                    Clicked="OnWhatsAppClicked" />
+                   HorizontalTextAlignment="Center"
+                   Margin="0, 0, 0, 10"/>
+
+            <Label Text="Síguenos en nuestras plataformas para no perderte ninguna novedad."
+                   FontSize="16"
+                   TextColor="#777"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
+
+            <!-- BOTONES SIMÉTRICOS Y CENTRADOS -->
+
+            <Frame BackgroundColor="#E74C3C" CornerRadius="15" HasShadow="True" Padding="0" HeightRequest="65" HorizontalOptions="FillAndExpand">
+                <Grid Padding="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45"/>
+                        <!-- Icono -->
+                        <ColumnDefinition Width="*" />
+                        <!-- Texto Centrado -->
+                        <ColumnDefinition Width="45"/>
+                        <!-- Compensación -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Icono (Columna 0) -->
+                    <Image Source="logo_soporte.png" 
+               WidthRequest="40" HeightRequest="40" Aspect="AspectFit" VerticalOptions="Center" Grid.Column="0"/>
+
+                    <!-- Texto Centrado (Columna 1) -->
+                    <Label Text="EASYPATAGONIA.COM" 
+               TextColor="White"
+               FontSize="18"
+               FontAttributes="Bold"
+               VerticalOptions="Center"
+               HorizontalOptions="FillAndExpand"
+               HorizontalTextAlignment="Center" 
+               Grid.Column="1">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnEasyClicked"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+            </Frame>
+
+            <!-- Instagram -->
+            <Frame BackgroundColor="#E1306C" CornerRadius="15" HasShadow="True" Padding="0" HeightRequest="65" HorizontalOptions="FillAndExpand">
+                <Grid Padding="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45"/>
+                        <!-- Columna 0: Icono (Espacio para compensar) -->
+                        <ColumnDefinition Width="*" />
+                        <!-- Columna 1: Texto Centrado -->
+                        <ColumnDefinition Width="45"/>
+                        <!-- Columna 2: Compensación vacía -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Icono (Columna 0) -->
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" 
+                           WidthRequest="30" HeightRequest="30" Aspect="AspectFit" VerticalOptions="Center" Grid.Column="0"/>
+
+                    <!-- Texto Centrado (Columna 1) -->
+                    <Label Text="INSTAGRAM" 
+                           TextColor="White"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           HorizontalOptions="FillAndExpand"
+                           HorizontalTextAlignment="Center" 
+                           Grid.Column="1">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnInstagramClicked"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+            </Frame>
+
+            <!-- TikTok -->
+            <Frame BackgroundColor="#000000" CornerRadius="15" HasShadow="True" Padding="0" HeightRequest="65" HorizontalOptions="FillAndExpand">
+                <Grid Padding="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45"/>
+                        <!-- Icono -->
+                        <ColumnDefinition Width="*" />
+                        <!-- Texto Centrado -->
+                        <ColumnDefinition Width="45"/>
+                        <!-- Compensación -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Icono (Columna 0) -->
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/3046/3046124.png" 
+                           WidthRequest="30" HeightRequest="30" Aspect="AspectFit" VerticalOptions="Center" Grid.Column="0"/>
+
+                    <!-- Texto Centrado (Columna 1) -->
+                    <Label Text="TIKTOK" 
+                           TextColor="White"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           HorizontalOptions="FillAndExpand"
+                           HorizontalTextAlignment="Center" 
+                           Grid.Column="1">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTikTokClicked"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+            </Frame>
+
+            <!-- WhatsApp (Contacto Directo) - Simétrico -->
+            <Frame BackgroundColor="#25D366" CornerRadius="15" HasShadow="True" Padding="0" HeightRequest="65" HorizontalOptions="FillAndExpand">
+                <Grid Padding="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45"/>
+                        <!-- Icono -->
+                        <ColumnDefinition Width="*" />
+                        <!-- Texto Centrado -->
+                        <ColumnDefinition Width="45"/>
+                        <!-- Compensación -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Icono (Columna 0) -->
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
+                           WidthRequest="30" HeightRequest="30" Aspect="AspectFit" VerticalOptions="Center" Grid.Column="0"/>
+
+                    <!-- Texto Centrado (Columna 1) -->
+                    <Label Text="SOPORTE DIRECTO" 
+                           TextColor="White"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           HorizontalOptions="FillAndExpand"
+                           HorizontalTextAlignment="Center" 
+                           Grid.Column="1">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnWhatsAppClicked"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+            </Frame>
+
+            <!-- EMAIL -->
+            <Label Text="¿Prefieres Contacto Directo?"
+                   FontSize="16"
+                   TextColor="#333"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,40,0,10"/>
+
+            <Label Text="infoeasypatagonia@gmail.com" 
+                   TextColor="#3498DB" 
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center" 
+                   TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEmailClicked" />
+                </Label.GestureRecognizers>
+            </Label>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

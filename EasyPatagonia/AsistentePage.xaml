@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyPatagonia.AsistentePage"
+             Title="Asistente Virtual"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <!-- ENCABEZADO COMPACTO -->
+            <StackLayout Spacing="5" HorizontalOptions="Center">
+                <Label Text="🤖 EasyAsistente" FontSize="24" FontAttributes="Bold" TextColor="#E74C3C" HorizontalTextAlignment="Center"/>
+                <Label Text="Ingresa tus datos y armaré tu viaje ideal." FontSize="14" TextColor="#555" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+
+            <!-- FORMULARIO -->
+            <Frame BackgroundColor="White" CornerRadius="15" HasShadow="True" Padding="15">
+                <StackLayout Spacing="15">
+
+                    <!-- Presupuesto -->
+                    <StackLayout Spacing="0">
+                        <Label Text="💰 Presupuesto Total (CLP)" TextColor="#333" FontAttributes="Bold" FontSize="12"/>
+                        <Entry x:Name="txtPresupuesto" Placeholder="Ej: 500000" Keyboard="Numeric" FontSize="15"/>
+                    </StackLayout>
+
+                    <!-- Grid para Días y Personas -->
+                    <Grid ColumnDefinitions="*, *" ColumnSpacing="15">
+                        <StackLayout Grid.Column="0" Spacing="0">
+                            <Label Text="📅 N° Días" TextColor="#333" FontAttributes="Bold" FontSize="12"/>
+                            <Entry x:Name="txtDias" Placeholder="Ej: 3" Keyboard="Numeric" FontSize="15"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1" Spacing="0">
+                            <Label Text="👥 N° Personas" TextColor="#333" FontAttributes="Bold" FontSize="12"/>
+                            <Entry x:Name="txtPersonas" Placeholder="Ej: 2" Keyboard="Numeric" FontSize="15"/>
+                        </StackLayout>
+                    </Grid>
+
+                    <!-- FILTROS (CHECKBOXES MEJORADOS) -->
+                    <Label Text="¿Qué deseas incluir?" TextColor="#333" FontAttributes="Bold" FontSize="12" Margin="0,5,0,0"/>
+
+                    <!-- Usamos un Grid para alinear mejor los checkboxes -->
+                    <Grid ColumnDefinitions="Auto, Auto, Auto" ColumnSpacing="15" HorizontalOptions="Center">
+
+                        <!-- Opción 1: Actividades -->
+                        <StackLayout Grid.Column="0" Orientation="Vertical" Spacing="0" HorizontalOptions="Center">
+                            <CheckBox x:Name="chkActividades" IsChecked="True" Color="#3498DB" HorizontalOptions="Center"/>
+                            <Label Text="Actividades" FontSize="12" TextColor="#555" HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                        <!-- Opción 2: Comidas -->
+                        <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="0" HorizontalOptions="Center">
+                            <CheckBox x:Name="chkComidas" IsChecked="True" Color="#E67E22" HorizontalOptions="Center"/>
+                            <Label Text="Restaurant" FontSize="12" TextColor="#555" HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                        <!-- Opción 3: Hotel -->
+                        <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="0" HorizontalOptions="Center">
+                            <CheckBox x:Name="chkAlojamiento" IsChecked="True" Color="#9B59B6" HorizontalOptions="Center"/>
+                            <Label Text="Hospedaje" FontSize="12" TextColor="#555" HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                    </Grid>
+
+                    <Button Text="GENERAR ITINERARIO" 
+                            BackgroundColor="#3498DB" 
+                            TextColor="White" 
+                            CornerRadius="20" 
+                            HeightRequest="45" 
+                            FontAttributes="Bold"
+                            Clicked="OnGenerarClicked"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- RESULTADOS (Se muestra al calcular) -->
+            <StackLayout x:Name="resultLayout" IsVisible="False" Spacing="15" BackgroundColor="#F5F5F5">
+
+                <Label Text="✨ Propuesta de Viaje" FontSize="20" FontAttributes="Bold" TextColor="#27AE60" HorizontalOptions="Center" Margin="0,10,0,0"/>
+
+                <!-- Resumen de Costos -->
+                <Frame BackgroundColor="#E8F8F5" CornerRadius="10" Padding="15" HasShadow="False">
+                    <StackLayout Spacing="5">
+                        <Label x:Name="lblMensajeIA" TextColor="#555" HorizontalTextAlignment="Center" FontAttributes="Italic"/>
+                        <Label x:Name="lblCostoTotal" TextColor="#E74C3C" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="18"/>
+                        <Label Text="* Precios sugeridos en fase de prueba. Sujetos a cambio." TextColor="#999" FontSize="10" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Lista Dinámica de Días -->
+                <StackLayout x:Name="listaDias" Spacing="10"/>
+
+            </StackLayout>
+
+            <!-- Botones de Exportación -->
+            <Grid x:Name="botonesExportar" IsVisible="False" ColumnDefinitions="*, *" ColumnSpacing="10" Margin="0,10,0,20">
+                <Button Text="GUARDAR TXT" 
+                        Grid.Column="0"
+                        BackgroundColor="#27AE60" 
+                        TextColor="White" 
+                        CornerRadius="20" 
+                        HeightRequest="45"
+                        Clicked="OnGuardarImagenClicked"/>
+
+                <Button Text="COMPARTIR TEXTO" 
+                        Grid.Column="1"
+                        BackgroundColor="#E67E22" 
+                        TextColor="White" 
+                        CornerRadius="20" 
+                        HeightRequest="45"
+                        Clicked="OnCompartirClicked"/>
+            </Grid>
+
+            <!-- Botón Flotante WhatsApp -->
+            <Frame BackgroundColor="#25D366" CornerRadius="25" Padding="0" HeightRequest="50" HasShadow="True" Margin="0,10">
+                <Grid>
+                    <Label Text="Te ayuamos por WSP" 
+                           TextColor="White" 
+                           FontAttributes="Bold" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center"/>
+                    <Button BackgroundColor="Transparent" Clicked="OnWhatsAppClicked"/>
+                </Grid>
+            </Frame>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

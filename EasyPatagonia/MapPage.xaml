@@ -1,34 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
              x:Class="EasyPatagonia.MapPage"
              Title="Mapa">
-    <ContentPage.Content>
-        <!-- Usamos AbsoluteLayout para colocar los elementos -->
-        <AbsoluteLayout>
-            <!-- Mapa en el fondo ocupando todo el espacio disponible -->
-            <maps:Map
-                x:Name="map"
-                MapType="Street"
-                IsShowingUser="True"
+
+    <AbsoluteLayout>
+        <maps:Map x:Name="map"
+              MapType="Street"
+              MyLocationEnabled="False"
+              VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand"
+              AbsoluteLayout.LayoutFlags="All"
+              AbsoluteLayout.LayoutBounds="0, 0, 1, 1" />
+
+        <Frame CornerRadius="20"
+           Padding="0"
+           HasShadow="True"
+           BackgroundColor="White"
+           HeightRequest="35"
+           WidthRequest="110"
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+           AbsoluteLayout.LayoutBounds="0.5, 0.02">
+            <Button Text="Satélite"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                FontSize="11"
+                FontAttributes="Bold"
+                Clicked="OnCambiarMapaClicked"
                 VerticalOptions="FillAndExpand"
-                HorizontalOptions="FillAndExpand"
-                AbsoluteLayout.LayoutFlags="All"
-                AbsoluteLayout.LayoutBounds="0, 0, 1, 1" />
+                HorizontalOptions="FillAndExpand"/>
+        </Frame>
 
-            <!-- Botón más abajo y centrado -->
-            <Button Text="Cómo llegar"
-                    BackgroundColor="#E74C3C"
-                    TextColor="White"
-                    CornerRadius="25"
-                    FontAttributes="Bold"
-                    WidthRequest="200"
-                    HeightRequest="50"
-                    Clicked="OnComoLlegarClicked"
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                    AbsoluteLayout.LayoutBounds="0.5, 0.95" />
-        </AbsoluteLayout>
-    </ContentPage.Content>
+        <Button Text="CÓMO LLEGAR"
+            BackgroundColor="#E74C3C"
+            TextColor="White"
+            CornerRadius="25"
+            FontAttributes="Bold"
+            WidthRequest="200"
+            HeightRequest="50"
+            Clicked="OnComoLlegarClicked"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            AbsoluteLayout.LayoutBounds="0.5, 0.95" />
+
+        <StackLayout Orientation="Vertical"
+                     Spacing="0"
+                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                     AbsoluteLayout.LayoutBounds="0.95, 0.78">
+
+            <Frame CornerRadius="35"
+                   Padding="0"
+                   IsClippedToBounds="True"
+                   HasShadow="False"
+                   BackgroundColor="Transparent"
+                   WidthRequest="70"
+                   HeightRequest="70"
+                   HorizontalOptions="Center">
+
+                <ImageButton Source="logo_soporte.png"
+                             BackgroundColor="Transparent"
+                             Aspect="AspectFit"
+                             Clicked="OnSoporteClicked"
+                             VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand" />
+            </Frame>
+
+            <Label Text="EasyAsistente"
+                   TextColor="Black"
+                   BackgroundColor="Transparent"
+                   FontSize="10"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Padding="5, 2">
+            </Label>
+
+        </StackLayout>
+
+    </AbsoluteLayout>
 </ContentPage>
-

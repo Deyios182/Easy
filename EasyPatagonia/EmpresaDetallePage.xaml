@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyPatagonia.EmpresaDetallePage"
+             Title="Detalle"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <StackLayout Padding="0" Spacing="0">
+
+            <!-- ZONA SUPERIOR: CARRUSEL DE FOTOS -->
+            <Grid HeightRequest="250">
+
+                <!-- Carrusel de Imágenes Principales -->
+                <CarouselView x:Name="carruselEmpresa" 
+                              HeightRequest="250"
+                              IndicatorView="indicatorDots">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <!-- La imagen ocupa todo el espacio -->
+                            <Image Source="{Binding .}" Aspect="AspectFill" BackgroundColor="#DDD"/>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+
+                <!-- Puntitos indicadores -->
+                <IndicatorView x:Name="indicatorDots"
+                               IndicatorColor="White"
+                               SelectedIndicatorColor="#E74C3C"
+                               HorizontalOptions="Center"
+                               VerticalOptions="End"
+                               Margin="0,0,0,10" />
+
+                <!-- CORRECCIÓN: LOGO PEQUEÑO (Quitamos el fondo blanco y lo hacemos más grande) -->
+                <Frame CornerRadius="35" WidthRequest="80" HeightRequest="80" 
+                       HorizontalOptions="End" VerticalOptions="End" 
+                       Margin="20" Padding="0" IsClippedToBounds="True" HasShadow="True" BackgroundColor="Transparent">
+                    <!-- El BackgroundColor="Transparent" permite ver la transparencia del logo -->
+                    <Image x:Name="imgLogo" Aspect="AspectFit"/>
+                </Frame>
+            </Grid>
+
+            <!-- ZONA INFERIOR: DATOS Y LISTA -->
+            <StackLayout Padding="20" Spacing="15">
+
+                <!-- Nombre y Dirección -->
+                <Label x:Name="lblNombre" FontSize="24" FontAttributes="Bold" TextColor="#333" HorizontalOptions="Center"/>
+                <Label x:Name="lblDireccion" FontSize="14" TextColor="#777" HorizontalOptions="Center"/>
+
+                <BoxView HeightRequest="1" Color="#DDD" />
+
+                <!-- Descripción -->
+                <Label Text="Descripción" FontSize="16" FontAttributes="Bold" TextColor="#E74C3C"/>
+                <Label x:Name="lblDescripcion" FontSize="14" TextColor="#555"/>
+
+                <!-- Botones de Acción -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" Margin="0,10">
+                    <Button Text="Ver en Mapa" 
+                            BackgroundColor="#3498DB" 
+                            TextColor="White" 
+                            CornerRadius="20" 
+                            HeightRequest="40" 
+                            Clicked="OnVerEnMapaClicked"/>
+
+                    <Button Text="WhatsApp" 
+                            BackgroundColor="#25D366" 
+                            TextColor="White" 
+                            CornerRadius="20" 
+                            HeightRequest="40" 
+                            Clicked="OnWhatsAppClicked"/>
+                </StackLayout>
+
+                <BoxView HeightRequest="1" Color="#DDD" />
+
+                <!-- Título Carta/Servicios -->
+                <Label Text="Carta / Servicios" FontSize="18" FontAttributes="Bold" TextColor="#333" Margin="0,10,0,0"/>
+
+                <!-- Contenedor dinámico (Se llena desde C#) -->
+                <StackLayout x:Name="listaServicios" Spacing="15">
+                </StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

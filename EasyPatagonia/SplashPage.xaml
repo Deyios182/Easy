@@ -2,18 +2,63 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:media="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
              x:Class="EasyPatagonia.SplashPage"
              NavigationPage.HasNavigationBar="False">
-    <ContentPage.Content>
-        <AbsoluteLayout>
-            <toolkit:MediaElement 
-                Source="android.resource://com.example.easypatagonia/raw/intro_easy" 
-                AutoPlay="True" 
-                Aspect="AspectFill" 
-                ShowsPlaybackControls="False" 
-                MediaEnded="OnMediaEnded" 
-                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-                AbsoluteLayout.LayoutFlags="All" />
-        </AbsoluteLayout>
-    </ContentPage.Content>
+
+    <Grid>
+        <!-- VIDEO DE FONDO – CUBRE TODA LA PANTALLA -->
+        <media:MediaElement x:Name="videoBackground"
+                            Source="android.resource://com.example.easypatagonia/raw/intro_easy"
+                            AutoPlay="True"
+                            IsLooping="True"
+                            Aspect="AspectFill"
+                            ShowsPlaybackControls="False"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"/>
+
+        <!-- LOGO GRANDE ARRIBA -->
+        <StackLayout VerticalOptions="Start" Margin="0,30,0,0" Spacing="15">
+            <Image Source="logo_easy.png"
+                   HeightRequest="250"
+                   HorizontalOptions="Center"
+                   Aspect="AspectFit"/>
+        </StackLayout>
+
+        <!-- CONSEJOS + BARRA ABAJO -->
+        <StackLayout VerticalOptions="End" Margin="30,0,30,10" Spacing="25">
+            <Frame BackgroundColor="#CCFFFFFF" 
+                   CornerRadius="20" 
+                   Padding="20" 
+                   HasShadow="False">
+                <StackLayout Spacing="10">
+                    <Label Text="Tip Viajero"
+                           TextColor="#27AE60"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+                    <Label x:Name="lblConsejo"
+                           Text="Cargando consejos..."
+                           TextColor="#333"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout Spacing="10">
+                <Label Text="Preparando tu aventura..."
+                       TextColor="White"
+                       FontSize="14"
+                       FontAttributes="Italic"
+                       HorizontalOptions="Center"/>
+                <ProgressBar x:Name="progressBar"
+                             ProgressColor="#E74C3C"
+                             HeightRequest="8"
+                             Progress="0"
+                             HorizontalOptions="Center"
+                             WidthRequest="280"/>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
 </ContentPage>

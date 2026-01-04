@@ -1,0 +1,20 @@
+## Visual Studio Files
+# Archivos de la solución y del usuario
+*.suo
+*.user
+
+# Directorio de Visual Studio (¡Esto soluciona tu problema!)
+.vs/
+
+# Directorios de compilación
+[Dd]ebug/
+[Rr]elease/
+bin/
+obj/
+
+# Paquetes NuGet
+packages/
+
+# Otros archivos comunes de VS
+*.pdb
+*.obj

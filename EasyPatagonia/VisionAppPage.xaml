@@ -3,31 +3,87 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EasyPatagonia.VisionAppPage"
              BackgroundColor="#F9F9F9"
-             Title="Visión de la App">
+             Title="Nuestra Visión">
     <ContentPage.Content>
-        <StackLayout Padding="20" Spacing="15">
-            <!-- Imagen de encabezado -->
-            <Image Source="vision_banner.jpg" 
-                   Aspect="AspectFill" 
-                   HeightRequest="30"
-                   HorizontalOptions="FillAndExpand" />
+        <StackLayout Padding="20" Spacing="20">
 
-            <!-- Título -->
-            <Label Text="EasyPatagonia - Descubre la Patagonia"
-                   FontSize="24"
+            <!-- Encabezado y Título -->
+            <Label Text="EasyPatagonia"
+                   FontSize="32"
                    FontAttributes="Bold"
-                   TextColor="#4f6d7a"
-                   HorizontalOptions="Center" />
+                   TextColor="#E74C3C" 
+                   HorizontalOptions="Center"
+                   Margin="0, 10, 0, 0" />
 
-            <!-- Texto de visión -->
+            <Label Text="Tú Disfruta, Nosotros Resolvemos."
+                   FontSize="18"
+                   FontAttributes="Italic"
+                   TextColor="#4f6d7a"
+                   HorizontalOptions="Center"
+                   Margin="0, 0, 0, 20" />
+
+            <!-- ZONA DE PILARES (Modular y con Iconos) -->
             <ScrollView>
-                <Label Text="En Easy Patagonia, nuestra visión es ser la plataforma líder en turismo responsable que conecta a los viajeros con experiencias auténticas y memorables en la región austral de Chile. Aspiramos a transformar cada viaje en la Patagonia en una aventura inolvidable, facilitando la exploración de esta tierra indómita con comodidad, autenticidad y conexión con la naturaleza.\n\nNos enfocamos en crear soluciones innovadoras que simplifiquen la planificación de los viajes, a través de nuestra próxima aplicación móvil. Con ella, los usuarios podrán acceder fácilmente a las mejores opciones de hospedaje, gastronomía y tours personalizados, optimizando cada detalle para que solo se preocupen por disfrutar.\n\nAdemás, como parte de nuestra misión, promovemos un turismo sostenible que respeta y celebra la riqueza cultural y natural de la región, apoyando a las comunidades locales y fomentando la preservación de su entorno único.Nuestro lema lo resume todo: 'Tú disfruta, nosotros resolvemos'. Con Easy Patagonia, la aventura comienza aquí."
-                       FontSize="16"
-                       TextColor="#4f6d7a"
-                       LineHeight="1.5" />
+                <StackLayout Spacing="25">
+
+                    <!-- PILAR 1: Conexión Auténtica -->
+                    <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True" Padding="15">
+                        <StackLayout Spacing="10">
+                            <Label Text="🧭 Conexión y Autenticidad" FontSize="20" FontAttributes="Bold" TextColor="#34495E"/>
+                            <Label Text="Ser la plataforma líder que conecta a los viajeros con experiencias auténticas y memorables en la región austral, facilitando la exploración de esta tierra indómita."
+                                   FontSize="15" LineHeight="1.4" TextColor="#4f6d7a"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- PILAR 2: Innovación y Facilidad -->
+                    <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True" Padding="15">
+                        <StackLayout Spacing="10">
+                            <Label Text="💡 Planificación Simple" FontSize="20" FontAttributes="Bold" TextColor="#34495E"/>
+                            <Label Text="Crear soluciones innovadoras en nuestra app móvil para simplificar la planificación de tu viaje: acceso fácil a hospedaje, gastronomía y tours personalizados."
+                                   FontSize="15" LineHeight="1.4" TextColor="#4f6d7a"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- PILAR 3: Turismo Responsable -->
+                    <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True" Padding="15">
+                        <StackLayout Spacing="10">
+                            <Label Text="💚 Turismo Sostenible" FontSize="20" FontAttributes="Bold" TextColor="#34495E"/>
+                            <Label Text="Promover un turismo responsable que respeta y celebra la riqueza cultural y natural de la Patagonia, apoyando a las comunidades locales y la preservación del entorno."
+                                   FontSize="15" LineHeight="1.4" TextColor="#4f6d7a"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- MISIÓN -->
+                    <Label Text="🚀 Nuestra Misión" FontSize="22" FontAttributes="Bold" TextColor="#E74C3C"/>
+                    <Label Text="Impulsar el desarrollo turístico de la Región de Aysén mediante una plataforma innovadora que conecta a viajeros con experiencias auténticas, la naturaleza y las comunidades locales. A través de tecnología inteligente —como nuestro algoritmo de planificación personalizada y un mapa interactivo en tiempo real— facilitamos la exploración responsable, accesible y profunda de la Patagonia. Somos el puente digital que potencia a emprendedores locales, fortalece la economía regional y permite que cada visitante disfrute la Patagonia de forma sencilla, segura y memorable."
+                           FontSize="15" 
+                           LineHeight="1.4" 
+                           TextColor="#4f6d7a"
+                           HorizontalTextAlignment="Start"/>
+
+                    <!-- VISIÓN -->
+                    <Label Text="👁️ Nuestra Visión" FontSize="22" FontAttributes="Bold" TextColor="#E74C3C" Margin="0,15,0,0"/>
+                    <Label Text="Convertirnos en la plataforma turística líder de toda la Patagonia —chilena y argentina— integrando tecnología, sostenibilidad y desarrollo comunitario. Aspiramos a transformar la manera en que las personas descubren y recorren este territorio único, impulsando mayor conectividad digital, más oportunidades para pequeños emprendedores y un turismo consciente que proteja el valor natural y cultural de la región. Visualizamos una Patagonia más conectada, accesible e inclusiva, donde Easy Patagonia sea la puerta de entrada a experiencias auténticas y a un ecosistema turístico innovador y colaborativo."
+                           FontSize="15" 
+                           LineHeight="1.4" 
+                           TextColor="#4f6d7a"
+                           HorizontalTextAlignment="Start"/>
+                    <Label Text="Nuestro foco es que tú solo te preocupes por disfrutar. EasyPatagonia optimiza cada detalle para asegurar que tu aventura comience aquí, con comodidad y confianza."
+                           FontSize="16" HorizontalTextAlignment="Center" TextColor="#4f6d7a"/>
+
+                    <!-- Botón de Llamada a la Acción (Volver al Mapa) -->
+                    <Button Text="EXPLORAR LA PATAGONIA AHORA"
+                            BackgroundColor="#00A19D"
+                            TextColor="White"
+                            CornerRadius="25"
+                            FontAttributes="Bold"
+                            HeightRequest="50"
+                            Margin="0, 20, 0, 40"
+                            Clicked="OnExplorarClicked" />
+
+                </StackLayout>
             </ScrollView>
 
-            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
